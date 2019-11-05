@@ -1,0 +1,88 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<div class="row">
+  
+        <div class="col-md-4">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">what TODO?</h4>
+                    </div>
+                    <div class="panel-body">
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" [(ngModel)]="name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Content</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" [(ngModel)]="content">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-10 col-md-offset-4">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-10 col-md-offset-8">
+                          <button type="button" class="btn btn-primary" (click)="addTodo()">add TODO</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+              </div>
+
+
+  <div class="col-md-7">
+	
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-list"></span>TODO list
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let todo of todos">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">
+                                        {{todo.name}}-{{todo.content}}
+                                    </label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <!-- <a href="#"><span class="glyphicon glyphicon-pencil"></span></a> -->
+                                    <a href="#" class="trash" (click)="removeTodo(todo)"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>
+                                    Total Count <span class="label label-info">{{todos.length}}</span></h6>
+                            </div>
+                            <!-- <div class="col-md-6">
+                                <ul class="pagination pagination-sm pull-right">
+                                    <li class="disabled"><a href="javascript:void(0)">«</a></li>
+                                    <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="javascript:void(0)">»</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+</div>
